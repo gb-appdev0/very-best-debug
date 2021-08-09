@@ -1,4 +1,4 @@
-<h1>venue Details</h1>
+<h1>Venue Details</h1>
 
 <dl>
   <dt>Address</dt>
@@ -39,7 +39,7 @@
 
   <dt>Delete venue</dt>
   <dd>
-    <a href="/delete_venue/<% @the_venue.id %>">
+    <a href="/delete_venue/<%= @the_venue.id %>">
       Delete this venue
     </a>
   </dd>
@@ -57,7 +57,7 @@
   <% @the_venue.comments.each do |comment| %>
   <tr>
     <td>
-      <%= comment.commenter.username %>
+      <%= User.all.where({ :id => comment.author_id })[0].username %>
     </td>
 
     <td>
